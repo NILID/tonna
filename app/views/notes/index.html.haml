@@ -1,0 +1,27 @@
+- set_meta_tags title: t('contacts.title')
+
+%article.single-page
+  .container-fluid
+    =# render 'social_links'
+    .row.contact-form.overlay-dark-3.force-fullwidth
+      .col-md-6.col-md-offset-3.text-center
+        %p.lead
+          Вы можете связаться с нами по любым вопросам:
+        .single-title
+          = fa_icon 'phone'
+          = link_to '+7-926-904-40-77', 'tel:+7-926-904-40-77'
+    .row.contact-form.overlay-dark-3.force-fullwidth
+      .col-md-12
+        .contact-clean
+          = bootstrap_form_for @note, html: { class: 'contact-form' } do |f|
+            %header
+              %h2.text-center.heading= t 'note.new'
+              %p.text-center.extra-info
+                = t 'note.newdesc_html', mail: mail_to_tonna
+            = f.text_field :email,  placeholder: t('note.email_placeholder'),         hide_label: true
+            = f.text_area :content, placeholder: Note.human_attribute_name(:content), hide_label: true
+
+            = f.form_group do
+              = recaptcha_tags hl: 'ru'
+            = f.form_group do
+              = f.submit t('actions.send'), class: 'btn btn-default'

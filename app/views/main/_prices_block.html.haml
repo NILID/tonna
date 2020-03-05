@@ -1,0 +1,36 @@
+.dual-call-to-action.overlay-dark-5
+  .container-fluid
+    .intro
+      .row.masonry(data-columns='1')
+        %div
+          .price-block{ data: { toggle: 'collapse', target: '#vizitka' }, aria: { expanded: 'false', controls: 'vizitka' } }
+            %h2.text-center Сайт-визитка
+            %p.text-center
+              %i.fa.fa-angle-down
+            %p.text-center.collapse#vizitka
+              Сайт, как правило, состоящий из одной веб-страниц и содержащий основную информацию об организации, частном лице, компании, товарах или услугах, прейскуранты, контактные данные.
+              .lead.lead-price.text-center от 12 000 руб
+        %div
+          .price-block{ data: { toggle: 'collapse', target: '#landing' }, aria: { expanded: 'false', controls: 'landing' } }
+            %h2.text-center Лэндинг
+            %p.text-center
+              %i.fa.fa-angle-down
+            %p.text-center.collapse#landing
+              Лэндинги отлично подходят для проведения рекламной кампании на конкретный товар или услугу с привлечением на сайт целевой аудитории.
+              .lead.lead-price.text-center от 21 000 руб
+        %div
+          .price-block{ data: { toggle: 'collapse', target: '#catalog' }, aria: { expanded: 'false', controls: 'catalog' } }
+            %h2.text-center Сайт-каталог
+            %p.text-center
+              %i.fa.fa-angle-down
+            %p.text-center.collapse#catalog
+              Сайт позволяющий посетителям выбрать товар, сформировать заказ на покупку и доставку заказа.
+              .lead.lead-price.text-center от 36 000 руб
+        %div
+          .price-block{ data: { toggle: 'collapse', target: '#portal' }, aria: { expanded: 'false', controls: 'portal' } }
+            %h2.text-center Портал/сервис
+            %p.text-center
+              %i.fa.fa-angle-down
+            %p.text-center.collapse#portal
+              Информационные порталы, электронные СМИ, многофункциональные проекты.
+              .lead.lead-price.text-center от 45 000 руб

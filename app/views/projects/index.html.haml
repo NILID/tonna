@@ -1,0 +1,17 @@
+- set_meta_tags title: t('projects.works'),
+  description: t('projects.works'),
+  keywords: t('projects.works')
+
+.recent-posts.archive-posts
+  .container-fluid
+    .row.archive-heading
+      .col-sm-12
+        %h1= @title
+        - if can? :new, Project
+          = link_to t('projects.new'), new_project_path
+        %p.extra-info
+          Над чем мы работали
+    .row.posts-wrapper.col-3
+      = render partial: 'project_mini', collection: @projects
+
+

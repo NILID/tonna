@@ -1,0 +1,21 @@
+.favorite-products
+  .container-fluid
+    .row.horizontal-break
+      .col-md-12
+        %hr/
+    .row.headline
+      .col-sm-12.heading
+        %h3.text-center Shop my favorite things
+    .row.products-wrapper
+      .col-md-12
+        %ul.list-unstyled.product-slider.light-slider.clearfix
+          - (1..8).each do |i|
+            %li
+              = link_to image_tag("product-slider-#{i}.jpg", class: 'img-responsive'), '#', class: 'product-thumbnail'
+    .row.see-all-products
+      .col-md-12
+        %p.text-center
+          %a.btn.btn-lg.btn-submit-inverse.btn-sell-all-products{:href => "#"} See All Products
+    .row.horizontal-break
+      .col-md-12
+        %hr/

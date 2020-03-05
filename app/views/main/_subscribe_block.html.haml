@@ -1,0 +1,13 @@
+.newsletter-subscribe.overlay-dark-3
+  .container-fluid
+    .intro
+      %header
+        %h2.text-center.heading Subscribe for our Newsletter
+        %p.text-center.extra-info
+          Use the Newsletter Block below to collect email addresses. Learn more
+          %a{:href => "#"} here
+      %form.form-inline{:enctype => "multipart/form-data", :method => "get", :name => "newsletter-subscribe", :target => "_self"}
+        .form-group.newsletter-input-wrapper
+          %input.form-control{:name => "email", :placeholder => "Email Address", :required => "", :type => "email"}/
+        .form-group.newsletter-button-wrapper
+          %button.btn.btn-default.btn-submit-inverse{:type => "submit"} Sign Up

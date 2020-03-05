@@ -1,0 +1,24 @@
+%article.single-page
+  .container-fluid
+    .row
+      .col-md-12
+        = bootstrap_form_for @project do |f|
+          %header
+            %h2.text-center.heading
+              = formtitle
+          = f.text_field :title, hide_label: true, placeholder: Project.human_attribute_name(:title)
+          = f.text_area :desc, hide_label: true, rows: 2, placeholder: Project.human_attribute_name(:desc)
+          = f.text_field :tag_list, hide_label: true, value: f.object.tag_list.to_s, placeholder: Project.human_attribute_name(:tag_list)
+          = f.file_field :preview, hide_label: true
+          = f.check_box :hide
+          = f.collection_check_boxes :authors, Project::AUTHORS, :to_s, :to_s
+
+          = f.form_group do
+            #containers
+              = f.fields_for :containers do |container|
+                = render 'container_fields', f: container
+              .links
+                = link_to_add_association t('containers.add'), f, :containers, class: 'btn btn-default'
+
+          = f.form_group do
+            = f.submit class: 'btn btn-default'

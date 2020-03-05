@@ -1,0 +1,7 @@
+- model_class = Client
+
+%article.single-post
+  .container-fluid
+    .page-header
+      %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+    = render :partial => "form"

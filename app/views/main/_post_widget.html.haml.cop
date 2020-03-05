@@ -1,0 +1,54 @@
+.posts-widgets
+  .container-fluid
+    .row.widgets
+      .col-md-6.col-sm-12.left
+        .row.headline
+          .col-sm-12.heading
+            %h3 Most Popular
+        .row.post-widget-wrapper
+          .col-md-5.col-sm-5
+            = link_to image_tag('home-2-img-11.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .col-md-7.col-sm-7
+            .post-summary
+              %h2.post-title
+                %a{:href => "single-post-with-sidebar.html"} Draw Readers in With an Alluring Blog Post Title Here
+        .row.post-widget-wrapper
+          .col-md-5.col-sm-5
+            = link_to image_tag('home-2-img-13.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .col-md-7.col-sm-7
+            .post-summary
+              %h2.post-title
+                %a{:href => "single-post-with-sidebar.html"} This Space is Perfect for Inspiring Your Readers with a Bold Title
+        .row.post-widget-wrapper
+          .col-md-5.col-sm-5
+            = link_to image_tag('home-2-img-15.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .col-md-7.col-sm-7
+            .post-summary
+              %h2.post-title
+                %a{:href => "single-post-with-sidebar.html"} Write a Compelling Blog Post Title Here
+      .col-md-6.col-sm-12.right
+        .row.headline
+          .col-sm-12.heading
+            %h3 Currently On Tap
+        .row.post-widget-wrapper
+          .col-md-5.col-sm-5
+            = link_to image_tag('home-2-img-12.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .col-md-7.col-sm-7
+            .post-summary
+              %h2.post-title
+                %a{:href => "single-post-without-sidebar.html"} Captivate Your Readers With an Interesting Blog Post Title
+        .row.post-widget-wrapper
+          .col-md-5.col-sm-5
+            = link_to image_tag('home-2-img-14.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .col-md-7.col-sm-7
+            .post-summary
+              %h2.post-title
+                %a{:href => "single-post-without-sidebar.html"} Draw Readers in With an Alluring Blog Post Title Here
+        .row.post-widget-wrapper
+          .col-md-5.col-sm-5
+            = link_to image_tag('home-2-img-16.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .col-md-7.col-sm-7
+            .post-summary
+              %h2.post-title
+                %a{:href => "single-post-without-sidebar.html"} This Space is Perfect for Inspiring Your Readers with a Bold Title
+      .clearfix

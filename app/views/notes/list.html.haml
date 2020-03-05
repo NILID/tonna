@@ -1,0 +1,11 @@
+- set_meta_tags title: t('note.title')
+
+%article.single-page
+  .container-fluid
+    .row
+      .col-md-12
+        %h4= t 'note.title'
+        - unless @notes.empty?
+          = render @notes
+        - else
+          .well= t 'shared.empty'

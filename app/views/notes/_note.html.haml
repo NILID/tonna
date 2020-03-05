@@ -1,0 +1,13 @@
+= content_tag_for(:div, note, class: 'well well-small') do
+  .row
+    .col-xs-12
+      %div
+        .pull-left
+          = mail_to note.email
+        .pull-right
+          = link_to note, remote: true, confirm: t('actions.sure'), method: :delete, class: 'btn btn-danger btn-xs' do
+            %i.fa.fa-trash
+        .clearfix
+      %hr
+      = note.content
+

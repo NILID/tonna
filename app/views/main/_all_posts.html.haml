@@ -1,0 +1,9 @@
+.recent-posts.first
+  .container-fluid
+    .row.headline
+      .col-sm-12.heading
+        %h3 Последние проекты
+    .row.posts-wrapper.col-3
+      = render partial: 'projects/project_mini', collection: @last_projects
+      .clearfix
+=# render 'post_block'

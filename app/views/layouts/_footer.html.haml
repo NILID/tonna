@@ -1,0 +1,19 @@
+%footer.site-footer
+  %ul.list-inline.text-center.footer-menu
+    %li
+      = link_to t('shared.about_us'), about_path
+    %li
+      = link_to t('contacts.title'), notes_path
+  .text-center.footer-social-icons
+    = link_to social_link(:instagram), target: '_blank', rel: 'nofollow' do
+      %i.fa.fa-instagram
+    = link_to social_link(:facebook), target: '_blank', rel: 'nofollow' do
+      %i.fa.fa-facebook
+    = link_to social_link(:twitter), target: '_blank', rel: 'nofollow' do
+      %i.icon.ion-social-twitter
+    = link_to social_link(:vk), target: '_blank', rel: 'nofollow' do
+      %i.fa.fa-vk
+    = link_to social_link(:behance), target: '_blank', rel: 'nofollow' do
+      %i.fa.fa-behance
+    = link_to social_link(:telegram), target: '_blank', rel: 'nofollow' do
+      %i.fa.fa-telegram

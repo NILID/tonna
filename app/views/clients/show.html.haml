@@ -1,0 +1,40 @@
+- model_class = Client
+
+%article.single-post
+  .container-fluid
+
+
+    .page-header
+      %h1=t '.title', :default => model_class.model_name.human.titleize
+
+    %p
+      %strong= model_class.human_attribute_name(:title) + ':'
+      %br
+      = @client.title
+    %p
+      %strong= model_class.human_attribute_name(:desc) + ':'
+      %br
+      = @client.desc
+    %p
+      %strong= model_class.human_attribute_name(:email) + ':'
+      %br
+      = @client.email
+    %p
+      %strong= model_class.human_attribute_name(:phone) + ':'
+      %br
+      = @client.phone
+    %p
+      %strong= model_class.human_attribute_name(:url) + ':'
+      %br
+      = @client.url
+    %p
+      %strong= model_class.human_attribute_name(:site) + ':'
+      %br
+      = @client.site
+    %p
+      %strong= model_class.human_attribute_name(:send_hello) + ':'
+      %br
+      = @client.send_hello
+
+    = link_to t('actions.edit', :default => t("helpers.links.edit")), edit_client_path(@client), class: 'btn btn-default'
+    = link_to t('actions.del'), @client, method: :delete, data: { confirm: t('actions.sure') }, class: 'btn btn-danger'

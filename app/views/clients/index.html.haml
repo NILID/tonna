@@ -1,0 +1,48 @@
+- model_class = Client
+%article.single-post
+  .container-fluid
+    .row
+      .col-md-12
+        .page-header
+          %h1
+            = t 'clients.title'
+            %small
+              = link_to t('actions.add'), new_client_path, class: 'btn btn-primary'
+              = link_to t('clients.parse'), parse_clients_path, class: 'btn btn-primary'
+
+          %p= raw pagy_info(@pagy)
+      .col-md-12
+        %p= raw pagy_bootstrap_nav(@pagy)
+
+      .col-md-12
+        %table.table.table-striped.table-bordered
+          %thead
+            %tr
+              %th= t 'clients.client_info'
+              %th= model_class.human_attribute_name(:desc)
+              %th= model_class.human_attribute_name(:send_hello)
+          %tbody
+            - @clients.each do |client|
+              %tr
+                %td
+                  %p
+                    = link_to t('actions.edit'), edit_client_path(client), class: 'btn btn-default btn-xs'
+                    = link_to t('actions.del'), client, method: :delete, data: { confirm: t('actions.sure') }, class: 'btn btn-xs btn-danger'
+
+                  %dl.dl-horizontal
+                    %dt= model_class.human_attribute_name(:title)
+                    %dd= link_to client.title, client
+                    %dt Email
+                    %dd= client.email
+                    %dt= model_class.human_attribute_name(:phone)
+                    %dd= client.phone
+                    %dt= model_class.human_attribute_name(:site)
+                    %dd= link_to client.site, client.site, target: '_blank', rel: 'nofollow'
+                    %dt= model_class.human_attribute_name(:categories)
+                    %dd= client.categories
+                    %br
+                    %dt= model_class.human_attribute_name(:url)
+                    %dd= link_to client.url, client.url, target: '_blank', rel: 'nofollow'
+
+                %td= client.desc
+                %td{ class: client.send_hello ? 'success' : nil }= t "clients.hello.#{client.send_hello}"
